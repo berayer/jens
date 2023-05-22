@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: jens-system-service
+server:
+  port: 13001
