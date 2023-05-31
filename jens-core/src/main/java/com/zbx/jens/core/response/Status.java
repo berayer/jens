@@ -10,11 +10,12 @@ import lombok.RequiredArgsConstructor;
  **/
 @RequiredArgsConstructor
 @Getter
-public enum ResponseStatus {
+public enum Status {
 
     SUCCESS(200, "ok"),
     FAILED(400, "客户端错误"),
-    ERROR(500,"服务器错误");
+    FORBIDDEN(403, "拒绝访问"),
+    ERROR(500, "服务器错误");
 
     private final int code;
     private final String msg;

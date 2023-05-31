@@ -21,34 +21,34 @@ public class Result<T> {
     }
 
     public static <T> Result<T> success() {
-        return ofStatus(ResponseStatus.SUCCESS);
+        return ofStatus(Status.SUCCESS);
     }
 
     public static <T> Result<T> success(T data) {
-        return ofStatus(ResponseStatus.SUCCESS, data);
+        return ofStatus(Status.SUCCESS, data);
     }
 
     public static <T> Result<T> failed() {
-        return ofStatus(ResponseStatus.FAILED);
+        return ofStatus(Status.FAILED);
     }
 
     public static <T> Result<T> failed(T data) {
-        return ofStatus(ResponseStatus.FAILED, data);
+        return ofStatus(Status.FAILED, data);
     }
 
     public static <T> Result<T> error() {
-        return ofStatus(ResponseStatus.ERROR);
+        return ofStatus(Status.ERROR);
     }
 
     public static <T> Result<T> error(T data) {
-        return ofStatus(ResponseStatus.ERROR, data);
+        return ofStatus(Status.ERROR, data);
     }
 
-    public static <T> Result<T> ofStatus(ResponseStatus status) {
+    public static <T> Result<T> ofStatus(Status status) {
         return ofStatus(status, null);
     }
 
-    public static <T> Result<T> ofStatus(ResponseStatus status, T data) {
+    public static <T> Result<T> ofStatus(Status status, T data) {
         return new Result<>(status.getCode(), status.getMsg(), data);
     }
 
