@@ -24,9 +24,9 @@ public class UserController {
      * @return
      */
     @GetMapping("/search")
-    public Result<Page<User>> search() {
-        Page<User> page = new Page<>(1, 20);
-        Page<User> list = userService.page(page);
+    public Result<Page<User>> search(Integer page, Integer size) {
+        Page<User> p = new Page<>(page, size);
+        Page<User> list = userService.page(p);
         return Result.success(list);
     }
 

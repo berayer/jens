@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: jens-system-service
+  datasource:
+    url: jdbc:mysql://localhost:3388/rbac?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver

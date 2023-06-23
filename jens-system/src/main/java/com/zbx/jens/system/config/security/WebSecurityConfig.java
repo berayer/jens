@@ -31,7 +31,7 @@ public class WebSecurityConfig {
         // 设置保护路径
         http.authorizeHttpRequests(author -> author
                         .requestMatchers(HttpMethod.POST, "/login").permitAll()
-                        .requestMatchers("/error").permitAll()
+                        .requestMatchers("/error", "/user/**").permitAll()
                         .anyRequest().authenticated())
                 .exceptionHandling().accessDeniedHandler(customAccessDeniedHandler);
         // 关闭默认表单认证
