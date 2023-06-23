@@ -1,14 +1,13 @@
 package com.zbx.jens.system.service;
 
-import com.mybatisflex.core.service.IService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.zbx.jens.system.entity.User;
 
 /**
- * 系统用户表 服务层。
- *
- * @author Administrator
- * @since 2023-05-31
- */
+* @author Administrator
+* @description 针对表【user(用户信息)】的数据库操作Service
+* @createDate 2023-06-23 08:48:32
+*/
 public interface UserService extends IService<User> {
 
 }

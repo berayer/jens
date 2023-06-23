@@ -34,18 +34,17 @@ public class LoginController {
         log.info("用户请求登陆: {}", loginForm);
         UsernamePasswordAuthenticationToken unauthenticatedToken = UsernamePasswordAuthenticationToken.unauthenticated(loginForm.getUsername(), loginForm.getPassword());
         authService.login(unauthenticatedToken, loginForm.isRememberMe(), request, response);
-        return Result.success();
+        String token = response.getHeader("set-cookie");
+        return Result.success(token);
     }
 
     @PostMapping("/logout")
     public Result<String> logout() {
-
         return Result.success();
     }
 
     @PostMapping("/refreshToken")
     public Result<String> refreshToken() {
-
         return Result.success();
     }
 

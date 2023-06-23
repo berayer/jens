@@ -9,32 +9,20 @@ import lombok.EqualsAndHashCode;
 import java.io.Serial;
 
 /**
- * 用户信息
+ * 用户组信息
  *
- * @TableName user
+ * @TableName user_group
  */
 @EqualsAndHashCode(callSuper = true)
-@TableName(value = "user")
+@TableName(value = "user_group")
 @Data
-public class User extends BaseEntity {
+public class UserGroup extends BaseEntity {
 
     /**
-     * 用户名
+     * 用户组名称(唯一)
      */
-    @TableField(value = "username")
-    private String username;
-
-    /**
-     * 昵称
-     */
-    @TableField(value = "nickName")
-    private String nickName;
-
-    /**
-     * 是否启用
-     */
-    @TableField(value = "enabled")
-    private Boolean enabled;
+    @TableField(value = "name")
+    private String name;
 
     @Serial
     @TableField(exist = false)

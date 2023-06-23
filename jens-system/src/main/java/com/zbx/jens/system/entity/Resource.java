@@ -9,32 +9,26 @@ import lombok.EqualsAndHashCode;
 import java.io.Serial;
 
 /**
- * 用户信息
+ * 资源信息
  *
- * @TableName user
+ * @TableName resource
  */
 @EqualsAndHashCode(callSuper = true)
-@TableName(value = "user")
+@TableName(value = "resource")
 @Data
-public class User extends BaseEntity {
+public class Resource extends BaseEntity {
 
     /**
-     * 用户名
+     * 资源地址(唯一)
      */
-    @TableField(value = "username")
-    private String username;
+    @TableField(value = "url")
+    private String url;
 
     /**
-     * 昵称
+     * 资源名称
      */
-    @TableField(value = "nickName")
-    private String nickName;
-
-    /**
-     * 是否启用
-     */
-    @TableField(value = "enabled")
-    private Boolean enabled;
+    @TableField(value = "name")
+    private String name;
 
     @Serial
     @TableField(exist = false)

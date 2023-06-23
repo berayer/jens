@@ -2,13 +2,11 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zbx.jens.system.mapper.UserMapper">
+<mapper namespace="com.zbx.jens.system.mapper.UserGroupMapper">
 
-    <resultMap id="BaseResultMap" type="com.zbx.jens.system.entity.User">
+    <resultMap id="BaseResultMap" type="com.zbx.jens.system.entity.UserGroup">
             <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="username" column="username" jdbcType="VARCHAR"/>
-            <result property="nickName" column="nickName" jdbcType="VARCHAR"/>
-            <result property="enabled" column="enabled" jdbcType="BIT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="createBy" column="createBy" jdbcType="VARCHAR"/>
             <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
             <result property="updateBy" column="updateBy" jdbcType="VARCHAR"/>
@@ -16,13 +14,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,nickName,
-        password,enabled,createBy,
+        id,name,createBy,
         createTime,updateBy,updateTime
     </sql>
-
-    <select id="selectPasswordById" resultType="java.lang.String">
-        select password from `user` where id = #{id}
-    </select>
-
 </mapper>

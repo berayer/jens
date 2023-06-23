@@ -1,16 +1,13 @@
-package com.zbx.jens.system.service;
+package com.zbx.jens.system.service.impl;
 
-
-import com.mybatisflex.core.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.zbx.jens.system.entity.User;
 import com.zbx.jens.system.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import static com.zbx.jens.system.entity.table.UserTableDef.USER;
 
 
 /**
@@ -26,13 +23,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        QueryWrapper query = QueryWrapper.create().where(USER.USERNAME.eq(username));
-        com.zbx.jens.system.entity.User user = userMapper.selectOneByQuery(query);
+        User user = userMapper.selectOne(new LambdaQueryWrapper<User>().eq(User::getUsername, username));
+
         if (user != null) {
-            return User.withUsername(user.getUsername())
-                    .password(user.getPassword())
-                    .roles("admin", "user")
-                    .authorities("add", "delete", "update")
+            String password = userMapper.selectPasswordById(user.getId());
+            return org.springframework.security.core.userdetails.User
+                    .withUsername(user.getUsername())
+                    .password(password)
+                    .roles("admin", "users")
                     .build();
         } else {
             throw new UsernameNotFoundException("用户不存在");

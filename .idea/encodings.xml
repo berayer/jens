@@ -5,8 +5,14 @@
     <file url="file://$PROJECT_DIR$/jens-authentication/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jens-core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jens-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jens-imes/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jens-imes/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jens-rbac/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jens-rbac/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jens-system/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jens-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/split-monitor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/split-monitor/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

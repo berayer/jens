@@ -1,16 +1,21 @@
 package com.zbx.jens.system.mapper;
 
-import com.mybatisflex.core.BaseMapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zbx.jens.system.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 系统用户表 映射层。
- *
- * @author Administrator
- * @since 2023-05-31
- */
+* @author Administrator
+* @description 针对表【user(用户信息)】的数据库操作Mapper
+* @createDate 2023-06-23 08:48:32
+* @Entity com.zbx.jens.system.entity.User
+*/
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
 
+    String selectPasswordById(Integer id);
 }
+
+
+
+

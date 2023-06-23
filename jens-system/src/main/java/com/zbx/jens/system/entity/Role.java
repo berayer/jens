@@ -1,25 +1,30 @@
 package com.zbx.jens.system.entity;
 
-import com.mybatisflex.annotation.Table;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.zbx.jens.core.entity.BaseEntity;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serial;
+
 /**
- * 系统角色表 实体类。
+ * 角色信息
  *
- * @author Administrator
- * @since 2023-05-31
+ * @TableName role
  */
 @EqualsAndHashCode(callSuper = true)
+@TableName(value = "role")
 @Data
-@Builder
-@Table(value = "system_role")
-public class Role extends BaseEntity  {
+public class Role extends BaseEntity {
 
     /**
-     * 用户名
+     * 角色名称(唯一)
      */
+    @TableField(value = "name")
     private String name;
+
+    @Serial
+    @TableField(exist = false)
+    private static final long serialVersionUID = 1L;
 }
